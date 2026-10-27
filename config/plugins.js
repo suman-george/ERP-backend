@@ -24,9 +24,11 @@ const deniedTypes = [
 module.exports = () => ({
   'users-permissions': {
     config: {
-      jwtManagement: 'refresh',
-      sessions: {
-        httpOnly: true,
+      // Login runs server-side in NextAuth, which stores only the JWT, so use
+      // long-lived JWTs instead of 10-minute access tokens + refresh cookies.
+      jwtManagement: 'legacy-support',
+      register: {
+        allowedFields: ['firstName', 'lastName'],
       },
     },
   },

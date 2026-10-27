@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "singularName": "sale",
+    "pluralName": "sales",
+    "displayName": "Sale"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Date": {
+      "type": "datetime"
+    },
+    "Total": {
+      "type": "decimal"
+    },
+    "CustomerName": {
+      "type": "string"
+    },
+    "Products": {
+      "type": "component",
+      "component": "shared.sale-item",
+      "repeatable": true
+    }
+  }
+}
